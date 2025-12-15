@@ -5,7 +5,7 @@ header("Content-Type: text/plain; charset=UTF-8");
 $FLAG = "infosec{Y0u_4r3_7ru3_b0yfRi3nd!}";
 
 function fail() {
-  echo "Sorry bro! Alice doesn't like you";
+  echo "Sorry bro!";
   exit;
 }
 
