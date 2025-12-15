@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Server checks two features: -->
+<!-- 1. Data user sent must be type application/json -->
+<!-- 2. Data user sent must contain key "boyfriend" with value "true" -->
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc></loc>
+    </url>
+
+</urlset>

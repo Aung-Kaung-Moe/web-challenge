@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   btn.addEventListener("click", async () => {
     const form = new URLSearchParams();
-    form.set("boyfriend", "true"); // decoy
+    form.set("boyfriend", "false"); // decoy
     form.set("girl", girl.name);   // for dynamic message
 
     const res = await fetch("flag.php", {
