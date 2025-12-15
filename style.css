@@ -1,0 +1,89 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  background: #f1d72c79; /* keep */
+  color: #1f2937;        /* keep */
+  font-family: system-ui, sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* index */
+.center-box { max-width: 720px; text-align: center; padding: 32px; }
+
+blockquote { font-style: italic; font-size: 1rem; color: #4b5563; }
+blockquote span { display: block; margin-top: 8px; font-size: 0.9rem; color: #1a1c21; }
+
+.divider {
+  width: 80px; height: 3px;
+  background: #60a5fa;
+  margin: 28px auto 0;
+  border-radius: 2px;
+}
+
+/* Get Flag button fixed top-right */
+.get-flag-btn {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #111827;
+  color: #f9fafb;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+
+  z-index: 1000;
+}
+.get-flag-btn:hover { opacity: 0.9; }
+
+/* flag page */
+.flag-wrap{
+  text-align: center;
+  padding: 28px;
+  width: min(720px, 92vw);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.flag-photo{
+  display: block;
+  width: min(320px, 80vw);
+  max-height: 52vh;
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+.flag-text{
+  margin: 0;
+  color: #4b5563;
+  font-size: 15px;
+}
+
+.flag-btn {
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #111827;
+  color: #f9fafb;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+}
+.flag-btn:active { transform: translateY(1px); }
+
+.result{
+  margin: 0;
+  min-height: 22px;
+  font-size: 14px;
+  white-space: pre-wrap;
+}
