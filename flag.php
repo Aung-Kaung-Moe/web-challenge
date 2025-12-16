@@ -9,12 +9,12 @@ $FLAG = "infosec{Y0u_4r3_7ru3_b0yfRi3nd!}";
 function sanitize_girl(string $girl): string {
   $girl = trim($girl);
   if ($girl === "" || !preg_match("/^[a-zA-Z0-9 .\\-']{1,40}$/", $girl)) {
-    return "Alice";
+    return "Nobody";
   }
   return $girl;
 }
 
-function fail(string $girl = "Alice"): void {
+function fail(string $girl = "Nobody"): void {
   echo "Sorry bro! " . sanitize_girl($girl) . " doesn't like you";
   exit;
 }
@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $ct = strtolower(trim(explode(';', $_SERVER['CONTENT_TYPE'] ?? '')[0]));
 $raw = file_get_contents("php://input");
-$girl = "Alice";
+$girl = "Nobody";
 
 /* form-urlencoded (default browser click) */
 if ($ct === "application/x-www-form-urlencoded") {

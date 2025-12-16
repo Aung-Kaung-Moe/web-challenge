@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- Server checks two features: -->
+<!-- To get flag, server checks three features: -->
 <!-- 1. Data user sent must be type application/json -->
 <!-- 2. Data user sent must contain key "boyfriend" with value "true" -->
+<!-- 3. Key "boyfriend" must be Unicode and visually similar to "boyfriend" -->
+                <!-- Happy Hacking -->
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
