@@ -2,7 +2,7 @@
 // flag.php
 header("Content-Type: text/plain; charset=UTF-8");
 
-$FLAG = getenv("FLAG") || "flag{fake}";
+$FLAG = process.env.FLAG || "flag{fake}";
 
 /* ================= helpers ================= */
 
