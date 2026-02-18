@@ -21,9 +21,17 @@ function fail(string $girl = "Nobody"): void {
 
 function latin_fold_to_ascii(string $s): string {
   $manual = [
-    "ḃ"=>"b","ó"=>"o","ý"=>"y","ḟ"=>"f","ŕ"=>"r",
-    "í"=>"i","é"=>"e","ń"=>"n","ď"=>"d"
-  ];
+  "ḃ"=>"b","ƀ"=>"b",
+  "ó"=>"o","ö"=>"o","ò"=>"o","ô"=>"o",
+  "ý"=>"y","ÿ"=>"y",
+  "ḟ"=>"f",
+  "ŕ"=>"r",
+  "í"=>"i","ï"=>"i",
+  "é"=>"e","ë"=>"e",
+  "ń"=>"n",
+  "ď"=>"d",
+];
+
 
   if (class_exists('Normalizer')) {
     $s = Normalizer::normalize($s, Normalizer::FORM_KD);
