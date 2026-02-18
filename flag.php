@@ -2,8 +2,7 @@
 // flag.php
 header("Content-Type: text/plain; charset=UTF-8");
 
-// Use env var if set (Render), fallback to local hardcoded for dev
-$FLAG = getenv("FLAG") ?: "flag{y0u_4r3_4_7ru3_l0v3r}";
+$FLAG = "flag{y0u_4r3_4_b0yfRi3nd_n0w}";
 
 /* ================= helpers ================= */
 
@@ -20,21 +19,12 @@ function fail(string $girl = "Nobody"): void {
   exit;
 }
 
-/**
- * True if the string contains at least one non-ASCII byte/char.
- * This is what enforces: no flag for pure English ASCII "boyfriend".
- */
-function contains_non_ascii(string $s): bool {
-  return preg_match('/[^\x00-\x7F]/', $s) === 1;
-}
-
 function latin_fold_to_ascii(string $s): string {
   $manual = [
     "ḃ"=>"b","ó"=>"o","ý"=>"y","ḟ"=>"f","ŕ"=>"r",
     "í"=>"i","é"=>"e","ń"=>"n","ď"=>"d"
   ];
 
-  // Normalize and strip combining marks if intl is available
   if (class_exists('Normalizer')) {
     $s = Normalizer::normalize($s, Normalizer::FORM_KD);
     $s = preg_replace('/\p{Mn}+/u', '', $s);
@@ -44,17 +34,8 @@ function latin_fold_to_ascii(string $s): string {
 }
 
 function is_unicode_boyfriend_key(string $key): bool {
-  // Must be exactly 9 Latin letters (Unicode Latin allowed)
   if (!preg_match('/^\p{Latin}{9}$/u', $key)) return false;
-
-  // Never allow the plain English ASCII version
-  if ($key === "boyfriend") return false;
-
-  // NEW RULE: must include at least one non-ASCII character
-  // (so ASCII-only variants like BoyFriend, BOYFRIEND won't work)
-  if (!contains_non_ascii($key)) return false;
-
-  // Must fold to boyfriend
+  if ($key === "boyfriend") return false; // must change at least one char
   return latin_fold_to_ascii($key) === "boyfriend";
 }
 
@@ -131,5 +112,4 @@ if ($chosenKey === null) fail($girl);
 if ($data[$chosenKey] !== true) fail($girl);
 
 /* SUCCESS */
-header("Content-Type: text/plain; charset=UTF-8");
 echo $FLAG;
