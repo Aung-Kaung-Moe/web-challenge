@@ -2,7 +2,7 @@
 // flag.php
 header("Content-Type: text/plain; charset=UTF-8");
 
-$FLAG = "flag{fake}";
+$FLAG = getenv("FLAG") || "flag{fake}";
 
 /* ================= helpers ================= */
 
